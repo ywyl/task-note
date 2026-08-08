@@ -10,4 +10,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 让所有 SCSS 块自动获得全局变量
+        additionalData: `@use "@/styles/variables" as *;`,
+      },
+    },
+  },
 })
